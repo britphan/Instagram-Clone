@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PostViewControllerDelegate;
 @interface PostViewController : UIViewController
 @property (strong, nonatomic) UIImage * image;
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnailView;
 @property (weak, nonatomic) IBOutlet UITextView *captionView;
+@property (nonatomic, weak) id <PostViewControllerDelegate> delegate;
+
 @end
+
+@protocol PostViewControllerDelegate
+-(void) didPost;
+@end;

@@ -11,6 +11,9 @@
 #import "AppDelegate.h"
 #import "ComposeViewController.h"
 #import "Post.h"
+#import "HomeViewController.h"
+
+
 
 @interface PostViewController ()
 
@@ -36,14 +39,20 @@
 
 - (IBAction)didTapPost:(id)sender {
     [Post postUserImage:self.image withCaption:self.captionView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-        if (error != nil) {
+        if (error == nil) {
             NSLog(@"Successfully posted image");
+            [self.captionView endEditing:YES];
+            
+            [self.delegate didPost];
+            AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            HomeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
+            appDelegate.window.rootViewController = homeViewController;
         } else {
             NSLog(@"Error posting image: %@", error.localizedDescription);
         }
     }];
 }
-
 /*
 #pragma mark - Navigation
 
