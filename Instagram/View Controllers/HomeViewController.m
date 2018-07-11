@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import "PostCell.h"
 #import "PostViewController.h"
+#import "DetailsViewController.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, PostViewControllerDelegate>
 @property (strong, nonatomic) NSMutableArray *posts;
@@ -67,15 +68,16 @@
 }
 
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"detailSegue"]){
+        DetailsViewController *detailsVC = (DetailsViewController *)[segue destinationViewController];
+        PostCell *senderCell = sender;
+        detailsVC.post = senderCell.post;
+    }
 }
-*/
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];

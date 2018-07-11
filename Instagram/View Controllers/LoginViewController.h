@@ -10,5 +10,6 @@
 #import <Parse/Parse.h>
 
 @interface LoginViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *backgroundView;
 
 @end

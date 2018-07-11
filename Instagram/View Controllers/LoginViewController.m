@@ -19,6 +19,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    
+    gradient.frame = self.backgroundView.bounds;
+    gradient.colors = @[(id)[UIColor colorWithRed:86.0f/255.0f
+                                            green:34.0f/255.0f
+                                             blue:183.0f/255.0f
+                                            alpha:1.0f].CGColor,
+                        (id)[UIColor colorWithRed:226.0f/255.0f
+                                            green:38.0f/255.0f
+                                             blue:135.0f/255.0f
+                                            alpha: 0.7f].CGColor,
+                        (id)[UIColor colorWithRed:233.0f/255.0f
+                                            green:109.0f/255.0f
+                                             blue:48.0f/255.0f
+                                            alpha: 0.0f].CGColor];
+    
+    [self.backgroundView.layer insertSublayer:gradient atIndex:0];
+
 }
 
 - (void)didReceiveMemoryWarning {
