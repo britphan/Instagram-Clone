@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "PFUser+ExtendedUser.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
@@ -26,14 +27,16 @@
                                             green:34.0f/255.0f
                                              blue:183.0f/255.0f
                                             alpha:1.0f].CGColor,
-                        (id)[UIColor colorWithRed:226.0f/255.0f
-                                            green:38.0f/255.0f
-                                             blue:135.0f/255.0f
-                                            alpha: 0.7f].CGColor,
-                        (id)[UIColor colorWithRed:233.0f/255.0f
-                                            green:109.0f/255.0f
-                                             blue:48.0f/255.0f
-                                            alpha: 0.0f].CGColor];
+                        (id)[UIColor colorWithRed:237.0f/255.0f
+                                            green:42.0f/255.0f
+                                             blue:143.0f/255.0f
+                                            alpha: 1.0f].CGColor,
+                        (id)[UIColor colorWithRed:252.0f/255.0f
+                                            green:134.0f/255.0f
+                                             blue:50.0f/255.0f
+                                            alpha: 1.0f].CGColor];
+    gradient.startPoint = CGPointMake(0.0,0.0);
+    gradient.endPoint = CGPointMake(1.0,0.5);
     
     [self.backgroundView.layer insertSublayer:gradient atIndex:0];
 
@@ -52,8 +55,8 @@
     newUser.username = self.usernameField.text;
     //newUser.email = self.emailField.text;
     newUser.password = self.passwordField.text;
-    
     // call sign up function on the object
+    newUser.likes = [[NSArray alloc] init];
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (error != nil) {
             NSLog(@"Error: %@", error.localizedDescription);

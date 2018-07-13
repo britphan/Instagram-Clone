@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "PFUser+ExtendedUser.h"
 
 @interface LoginViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;

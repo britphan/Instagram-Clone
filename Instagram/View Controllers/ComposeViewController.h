@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFUser+ExtendedUser.h"
 
 @interface ComposeViewController : UIViewController
 

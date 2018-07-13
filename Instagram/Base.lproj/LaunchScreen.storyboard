@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,17 +23,18 @@
                                 <rect key="frame" x="-187" y="-91" width="849" height="1033"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="B4x-h8-Sfr">
-                                <rect key="frame" x="137.5" y="279" width="100" height="109.5"/>
+                                <rect key="frame" x="87.5" y="259.5" width="200" height="148"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instagram" translatesAutoresizingMaskIntoConstraints="NO" id="oaT-r7-BSN">
-                                        <rect key="frame" x="18" y="0.0" width="64" height="64"/>
+                                        <rect key="frame" x="68" y="0.0" width="64" height="64"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOV-Gc-Ufe">
-                                        <rect key="frame" x="0.0" y="72" width="100" height="37.5"/>
-                                        <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="31"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instagram-font-logo-white-png" translatesAutoresizingMaskIntoConstraints="NO" id="aMg-HK-bL3">
+                                        <rect key="frame" x="0.0" y="72" width="200" height="76"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="cPD-WP-GEc"/>
+                                            <constraint firstAttribute="width" secondItem="aMg-HK-bL3" secondAttribute="height" multiplier="978:373" id="jzk-LG-2a8"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -55,6 +57,7 @@
     </scenes>
     <resources>
         <image name="instagram" width="64" height="64"/>
+        <image name="instagram-font-logo-white-png" width="978" height="373"/>
         <image name="instagram_gradient" width="312" height="390"/>
     </resources>
 </document>

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFUser+ExtendedUser.h"
 
 @protocol PostViewControllerDelegate;
 @interface PostViewController : UIViewController

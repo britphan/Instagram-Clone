@@ -5,7 +5,7 @@
 //  Created by Britney Phan on 7/9/18.
 //  Copyright © 2018 Britney Phan. All rights reserved.
 //
-
+#import <MobileCoreServices/UTCoreTypes.h>
 #import "ComposeViewController.h"
 #import "PostViewController.h"
 #import "AppDelegate.h"
@@ -39,7 +39,6 @@
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
-    
     imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
 
     

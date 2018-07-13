@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Post.h"
+#import "PFUser+ExtendedUser.h"
 
 @interface DetailsViewController : UIViewController
 @property (strong, nonatomic) Post *post;
