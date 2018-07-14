@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *posts;
 @property (weak, nonatomic) IBOutlet PFImageView *profPicView;
+@property (weak, nonatomic) IBOutlet UIButton *blueButton;
 
 @end
 
@@ -24,12 +25,24 @@
     if (self.user == nil) {
         
         self.user = [PFUser currentUser];
+        
+        [self.blueButton setTitle:@"Edit Profile" forState:UIControlStateNormal];
+    } else if ([self.user.username isEqualToString: PFUser.currentUser.username]){
+        [self.blueButton setTitle:@"Edit Profile" forState:UIControlStateNormal];
+    } else {
+        
+        [self.blueButton setTitle:@"Follow" forState:UIControlStateNormal];
     }
+    
     
     self.profPicView.file = self.user.image;
     self.usernameLabel.text = self.user.username;
     
     [self.profPicView loadInBackground];
+    
+    self.profPicView.layer.cornerRadius = self.profPicView.frame.size.height /2;
+    self.profPicView.layer.masksToBounds = YES;
+    self.profPicView.layer.borderWidth = 0;
     
     UICollectionViewFlowLayout *layout =(UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     
@@ -93,4 +106,21 @@
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.posts.count;
 }
+- (IBAction)didTapButton:(id)sender {
+    if ([self.user.username isEqualToString: PFUser.currentUser.username]){
+        [self performSegueWithIdentifier:@"settingsSegue" sender:nil];
+    }
+    /*else {
+        [self followUser:self.user];
+    }*/
+}
+/*
+- (void) followUser:(PFUser*) user{
+    [PFUser.currentUser addObject:user.username forKey:@"following"];
+    [self.user addObject:PFUser.currentUser forKey:@"followers"];
+    [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        
+    }];
+
+}*/
 @end

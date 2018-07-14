@@ -12,5 +12,7 @@
 @interface PFUser (ExtendedUser)
 @property (strong, nonatomic) PFFile *image;
 @property (strong, nonatomic) NSArray *likes;
+@property (strong, nonatomic) NSArray *following;
+@property (strong, nonatomic) NSArray *followers;
 
 @end

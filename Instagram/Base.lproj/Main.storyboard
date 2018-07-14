@@ -162,20 +162,33 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ufX-CA-fqv">
                                                     <rect key="frame" x="12" y="387" width="351" height="107.5"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccr-F7-K1c">
-                                                            <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="32" id="6Qr-tg-Wkx"/>
-                                                                <constraint firstAttribute="height" constant="32" id="d9g-u2-OYa"/>
-                                                            </constraints>
-                                                            <state key="normal" image="heart">
-                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </state>
-                                                            <state key="selected" image="heart_selected"/>
-                                                            <connections>
-                                                                <action selector="didTapLike:" destination="0Rb-Rj-1qa" eventType="touchUpInside" id="8fu-PL-KwH"/>
-                                                            </connections>
-                                                        </button>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IsW-ie-yy3">
+                                                            <rect key="frame" x="0.0" y="0.0" width="72" height="32"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccr-F7-K1c">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="32" id="6Qr-tg-Wkx"/>
+                                                                        <constraint firstAttribute="height" constant="32" id="d9g-u2-OYa"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="heart">
+                                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    </state>
+                                                                    <state key="selected" image="heart_selected"/>
+                                                                    <connections>
+                                                                        <action selector="didTapLike:" destination="0Rb-Rj-1qa" eventType="touchUpInside" id="8fu-PL-KwH"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgN-XA-k8Y">
+                                                                    <rect key="frame" x="40" y="0.0" width="32" height="32"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="32" id="2gG-JV-nOZ"/>
+                                                                        <constraint firstAttribute="height" constant="32" id="HHt-DI-ysr"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="comment"/>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfa-Aq-YrJ">
                                                             <rect key="frame" x="0.0" y="40" width="351" height="17"/>
                                                             <constraints>
@@ -291,7 +304,7 @@
                         <viewLayoutGuide key="safeArea" id="ZvE-JE-Grq"/>
                     </view>
                     <navigationItem key="navigationItem" id="g7g-8A-MfY">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="2XP-2H-jMI">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="2XP-2H-jMI">
                             <connections>
                                 <action selector="didTapCancel:" destination="tgS-hQ-jfG" id="X5j-EZ-f3l"/>
                             </connections>
@@ -358,7 +371,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AwC-dE-OnT">
-                                        <rect key="frame" x="12" y="451" width="360" height="73.5"/>
+                                        <rect key="frame" x="12" y="451" width="360" height="98.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxR-qY-9HE">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
@@ -366,9 +379,18 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" image="heart_selected"/>
+                                                <connections>
+                                                    <action selector="didTapLike:" destination="33c-SW-E1N" eventType="touchUpInside" id="t7K-BH-ce6"/>
+                                                </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5K-Y7-dsX">
+                                                <rect key="frame" x="0.0" y="40" width="37" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is my caption for my Instagram post. It has a lot of text lol blah blah blah blah" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2c-I6-6Nd">
-                                                <rect key="frame" x="0.0" y="40" width="357.5" height="33.5"/>
+                                                <rect key="frame" x="0.0" y="65" width="357.5" height="33.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -405,6 +427,8 @@
                     <connections>
                         <outlet property="captionLabel" destination="s2c-I6-6Nd" id="LkX-g1-SOW"/>
                         <outlet property="dateLabel" destination="jf0-BF-ue4" id="62M-OC-Z4E"/>
+                        <outlet property="likeButton" destination="DxR-qY-9HE" id="2jv-JH-RIn"/>
+                        <outlet property="likeCount" destination="R5K-Y7-dsX" id="odb-9b-qiN"/>
                         <outlet property="postView" destination="BMI-eo-wmX" id="ysZ-RE-qUO"/>
                         <outlet property="profPicView" destination="3Gt-ja-jle" id="hxj-Vf-OXt"/>
                         <outlet property="usernameLabel" destination="9Mf-Sb-dn7" id="sfE-bo-kTW"/>
@@ -461,6 +485,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="captionView" destination="39s-hh-HOu" id="5af-e6-neN"/>
+                        <outlet property="postingView" destination="3wg-7w-o5U" id="M0v-gb-3z4"/>
                         <outlet property="thumbnailView" destination="ls0-tZ-3mm" id="dXY-0e-9qq"/>
                     </connections>
                 </viewController>
@@ -592,6 +617,9 @@
                                                                         </constraints>
                                                                     </stackView>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="42.5" id="NIc-hl-q9z"/>
+                                                                </constraints>
                                                             </stackView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czw-2h-rOU">
                                                                 <rect key="frame" x="8" y="57.5" width="215" height="38.5"/>
@@ -601,7 +629,7 @@
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <segue destination="jV5-jY-9hD" kind="show" id="0MW-Dv-XCw"/>
+                                                                    <action selector="didTapButton:" destination="CX4-ku-9BE" eventType="touchUpInside" id="RKg-c3-DdM"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -617,10 +645,10 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fhi-yJ-ajo">
-                                                <rect key="frame" x="0.0" y="112" width="44.5" height="84"/>
+                                                <rect key="frame" x="0.0" y="112" width="328.5" height="84"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkT-i1-3JK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="44.5" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="328.5" height="20.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20.5" id="5p7-Bc-LXs"/>
                                                         </constraints>
@@ -628,9 +656,9 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4Q-3B-yp9">
-                                                        <rect key="frame" x="0.0" y="28.5" width="44.5" height="55.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is my Instagram bio. This is my Instagram bio. This is my Instagram bio." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4Q-3B-yp9">
+                                                        <rect key="frame" x="0.0" y="28.5" width="328.5" height="55.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -663,7 +691,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XqX-V1-mwV">
-                                <rect key="frame" x="0.0" y="268" width="375" height="350"/>
+                                <rect key="frame" x="0.0" y="287" width="375" height="331"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6PB-Rj-cx7">
@@ -710,9 +738,11 @@
                     <navigationItem key="navigationItem" title="Profile" id="aIf-Fu-def"/>
                     <connections>
                         <outlet property="bioLabel" destination="B4Q-3B-yp9" id="zuP-E9-yae"/>
+                        <outlet property="blueButton" destination="Czw-2h-rOU" id="vdG-R6-2lt"/>
                         <outlet property="collectionView" destination="XqX-V1-mwV" id="7rX-i6-cu8"/>
                         <outlet property="profPicView" destination="kHN-J8-jZg" id="1yR-RD-d5w"/>
                         <outlet property="usernameLabel" destination="zkT-i1-3JK" id="yL3-3r-EdL"/>
+                        <segue destination="jV5-jY-9hD" kind="show" identifier="settingsSegue" id="2sQ-3H-R5r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tlQ-ji-UXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -735,11 +765,23 @@
                                 <rect key="frame" x="91" y="312" width="193" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.2901960784" green="0.63137254899999995" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Edit Profile Picture">
+                                <state key="normal" title="Upload Profile Picture">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapEdit:" destination="jV5-jY-9hD" eventType="touchUpInside" id="65p-on-u6j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWF-Ac-yZk">
+                                <rect key="frame" x="91" y="377" width="193" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.2901960784" green="0.63137254899999995" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Take a Profile Picture">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapCamera:" destination="jV5-jY-9hD" eventType="touchUpInside" id="K1Y-zP-mNW"/>
+                                    <action selector="didTapEdit:" destination="jV5-jY-9hD" eventType="touchUpInside" id="3pp-EW-4JK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -819,6 +861,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="comment" width="106" height="105"/>
         <image name="feed_tab" width="25" height="25"/>
         <image name="heart" width="32" height="32"/>
         <image name="heart_selected" width="32" height="32"/>

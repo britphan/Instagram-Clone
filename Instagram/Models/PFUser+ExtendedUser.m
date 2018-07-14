@@ -9,7 +9,10 @@
 #import "PFUser+ExtendedUser.h"
 
 @implementation PFUser (ExtendedUser)
+
 @dynamic image;
 @dynamic likes;
+@dynamic following;
+@dynamic followers;
 
 @end

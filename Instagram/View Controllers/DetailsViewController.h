@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Post.h"
 #import "PFUser+ExtendedUser.h"
+#import "DateTools.h"
 
 @interface DetailsViewController : UIViewController
 @property (strong, nonatomic) Post *post;

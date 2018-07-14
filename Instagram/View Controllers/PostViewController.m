@@ -12,10 +12,12 @@
 #import "ComposeViewController.h"
 #import "Post.h"
 #import "HomeViewController.h"
+#import "MBProgressHUD.h"
 
 
 
 @interface PostViewController ()
+@property (strong, nonatomic) IBOutlet UIView *postingView;
 
 @end
 
@@ -38,10 +40,13 @@
 }
 
 - (IBAction)didTapPost:(id)sender {
+    [MBProgressHUD showHUDAddedTo:self.postingView animated:YES];
     [Post postUserImage:self.image withCaption:self.captionView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (error == nil) {
             NSLog(@"Successfully posted image");
             [self.captionView endEditing:YES];
+            
+            [MBProgressHUD hideHUDForView:self.postingView animated:YES];
             
             [self.delegate didPost];
             AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;

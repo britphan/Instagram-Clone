@@ -6,6 +6,7 @@
 //  Copyright © 2018 Britney Phan. All rights reserved.
 //
 
+#import <MobileCoreServices/UTCoreTypes.h>
 #import "SettingsViewController.h"
 #import "Parse.h"
 #import "ParseUI.h"
@@ -21,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.profPicView.file = [PFUser currentUser].image;
     
 }
 
@@ -35,7 +37,7 @@
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
     
-    imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 
     
     [self presentViewController:imagePickerVC animated:YES completion:nil];
@@ -56,6 +58,15 @@
     self.profPicView.image = editedImage;
     [self dismissViewControllerAnimated:YES completion:nil];
     // Dismiss UIImagePickerController to go back to your original view controller
+}
+- (IBAction)didTapCamera:(id)sender {  UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+    
+    imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
 - (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {

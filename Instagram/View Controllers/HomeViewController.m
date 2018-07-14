@@ -52,14 +52,12 @@ NSString *HeaderViewIdentifier = @"PostHeader";
     [query orderByDescending:@"createdAt"];
     query.limit = 20;
     
-    [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
             self.posts = [NSMutableArray arrayWithArray:posts];
             
             [self.tableView reloadData];
-            [MBProgressHUD hideHUDForView:self.tableView animated:YES];
             [self.refreshControl endRefreshing];
         } else {
             NSLog(@"%@", error.localizedDescription);
